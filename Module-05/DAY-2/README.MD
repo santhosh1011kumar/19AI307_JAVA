@@ -1,51 +1,57 @@
-# Ex.No:5(B) TIGHTLY ENCAPSULATED CLASS
-class Cylinder
-{
-    private int radius;
-    private int height;
+# Ex.No:5(B) TIGHTLY ENCAPSULATED CLASS TO CALCULATE SUM OF TWO NUMBERS
 
-    public void setRadius(int r)
-    {
-        radius = r;
+## AIM:
+To demonstrate the use of a tightly encapsulated class in Java that reads string inputs and calculates the sum of two numbers.
+
+## ALGORITHM:
+1. Define a nested static class `Multi` with private integer fields `n1` and `n2`.
+2. Use a method `setValues()` to convert and set input values from string to integers.
+3. Use a method `getProd()` to return the sum of the two numbers.
+4. Read inputs as strings in the main method and use the class to calculate and print the sum.
+
+## PROGRAM:
+
+### 5B_TIGHT_ENCAPSULATION_SUM.JAVA:
+```
+/*
+Developed by: Ragul S
+RegisterNumber: 212222060184
+*/
+```
+```java
+import java.util.*;
+
+public class Pro {
+    public static class Multi {
+        private int n1;
+        private int n2;
+
+        public void setValues(String num1, String num2) {
+            this.n1 = Integer.parseInt(num1);
+            this.n2 = Integer.parseInt(num2);
+        }
+
+        public int getProd() {
+            return n1 + n2;
+        }
     }
 
-    public void setHeight(int h)
-    {
-        height = h;
-    }
-
-    public void getVolume()
-    {
-        double volume = Math.PI * radius * radius * height;
-
-        System.out.println("Volume of Cylinder = " + volume);
-    }
-
-    public static void main(String args[])
-    {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
 
-        int radius = sc.nextInt();
-        int height = sc.nextInt();
-
-        Cylinder c = new Cylinder();
-
-        c.setRadius(radius);
-        c.setHeight(height);
-        c.getVolume();
-
-        sc.close();
+        Multi multi = new Multi();
+        multi.setValues(str1, str2);
+        int pro = multi.getProd();
+        System.out.println("Sum is " + pro);
     }
 }
 ```
 
-
-
 ## OUTPUT:
-![Image](https://github.com/aswin0603/19AI307_JAVA/blob/main/Module-05/DAY-2/Screenshot%202026-08-25%20212943.png)
+![image](https://github.com/user-attachments/assets/c323dd2a-b2a2-4caf-9c17-f550ffc840e7)
 
 
 ## RESULT:
-Thus a java program to display the value of volume of cylinder get the radius and height value as input and use tightly encapsulated class was executed successfully.
-
-
+The Java program successfully uses a tightly encapsulated class to read input in string format and print the sum of two numbers.
